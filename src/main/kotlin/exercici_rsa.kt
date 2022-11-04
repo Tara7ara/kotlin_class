@@ -6,8 +6,6 @@ import javax.crypto.Cipher
 
 const val ALGORITHM = "RSA"
 
-// bPf87rVpAEVlgEcoJ5ntgwX8zUDRl4Hy3I6WD7ZQc5YGepNQEFR3Si/iuqaEp2vP7oiWPuB7F7rvNeRkhlbv6w==        (hola)
-
 fun main() {
 
     var n = generateKeys()
@@ -21,21 +19,20 @@ fun main() {
     var encriptar_desencriptar = readln().toInt() ?: 1;
 
     if (encriptar_desencriptar == 1){
-        println("Cual es la frase que quieres encriptar")
+        println("ESCRIBE LA LLAVE QUE TE HAN PASADO")
         val public_key_external = readln().toString()
+        println("ESCRIBE LA FRASE QUE QUIERES ENCRIPTAR")
         val frase_random = readln().toString()
         val encriptar = encrypt(frase_random, public_key_external)
-        println("CLAVE PUBLICA")
+        println("CLAVE QUE HAY QUE ENVIAR A LOS DEMAS")
         println(encriptar)
         //println(decrypt(encriptar, private_key))
     }
     if (encriptar_desencriptar == 2){
         println("Cual es la frase que quieres desencriptar")
-        var private_key = readln().toString()
-        val desencriptar = decrypt(private_key, public_key)
+        var desencriptar = readln().toString()
         println(decrypt(desencriptar, private_key))
     }
-
 
 }
 
